@@ -3,11 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/G:/NetbeansProjects/AES/web/WEB-INF/dispatcher-servlet.xml</file>
-            <file>file:/G:/NetbeansProjects/AES/web/WEB-INF/applicationContext.xml</file>
-            <file>file:/G:/NetbeansProjects/AES/web/WEB-INF/jsp/index.jsp</file>
-            <file>file:/G:/NetbeansProjects/AES/src/java/hibernate.cfg.xml</file>
-            <file>file:/G:/NetbeansProjects/AES/web/redirect.jsp</file>
+            <file>file:/C:/Users/Bryan/Desktop/Alliance-E-Learning-System-Prototype/PinakaFinal/web/WEB-INF/applicationContext.xml</file>
+            <file>file:/C:/Users/Bryan/Desktop/Alliance-E-Learning-System-Prototype/PinakaFinal/web/WEB-INF/dispatcher-servlet.xml</file>
+            <file>file:/C:/Users/Bryan/Desktop/Alliance-E-Learning-System-Prototype/PinakaFinal/src/java/com/aes/controller/UserController.java</file>
+            <file>file:/C:/Users/Bryan/Desktop/Alliance-E-Learning-System-Prototype/PinakaFinal/src/java/com/aes/model/BusinessUnit.java</file>
+            <file>file:/C:/Users/Bryan/Desktop/Alliance-E-Learning-System-Prototype/PinakaFinal/web/WEB-INF/jsp/ambot_lang.jsp</file>
+            <file>file:/C:/Users/Bryan/Desktop/Alliance-E-Learning-System-Prototype/PinakaFinal/src/java/com/aes/controller/EmpireController.java</file>
+            <file>file:/C:/Users/Bryan/Desktop/Alliance-E-Learning-System-Prototype/PinakaFinal/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Bryan/Desktop/Alliance-E-Learning-System-Prototype/PinakaFinal/src/java/com/aes/service/EmpireService.java</file>
+            <file>file:/C:/Users/Bryan/Desktop/Alliance-E-Learning-System-Prototype/PinakaFinal/web/redirect.jsp</file>
+            <file>file:/C:/Users/Bryan/Desktop/Alliance-E-Learning-System-Prototype/PinakaFinal/web/WEB-INF/jsp/index.jsp</file>
         </group>
     </open-files>
 </project-private>

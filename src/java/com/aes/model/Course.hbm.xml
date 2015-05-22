@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 22, 2015 8:39:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.aes.model.Course" table="course" catalog="aes" optimistic-lock="version">
+        <id name="courseId" type="int">
+            <column name="courseId" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="courseCategory" class="com.aes.model.CourseCategory" fetch="select">
+            <column name="course_category_courseCategoryId" not-null="true" />
+        </many-to-one>
+        <many-to-one name="userDetails" class="com.aes.model.UserDetails" fetch="select">
+            <column name="user_details_trainer" not-null="true" />
+        </many-to-one>
+        <property name="courseTitle" type="string">
+            <column name="courseTitle" length="50" not-null="true" />
+        </property>
+        <property name="courseDescription" type="string">
+            <column name="courseDescription" not-null="true" />
+        </property>
+        <property name="dateCreated" type="timestamp">
+            <column name="dateCreated" length="19" not-null="true" />
+        </property>
+        <property name="lastEdited" type="timestamp">
+            <column name="lastEdited" length="19" not-null="true" />
+        </property>
+        <set name="exams" table="exam" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="course_courseId" not-null="true" />
+            </key>
+            <one-to-many class="com.aes.model.Exam" />
+        </set>
+        <set name="chapters" table="chapter" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="course_courseId" not-null="true" />
+            </key>
+            <one-to-many class="com.aes.model.Chapter" />
+        </set>
+        <set name="coursesAssigneds" table="courses_assigned" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="course_courseId" not-null="true" />
+            </key>
+            <one-to-many class="com.aes.model.CoursesAssigned" />
+        </set>
+    </class>
+</hibernate-mapping>

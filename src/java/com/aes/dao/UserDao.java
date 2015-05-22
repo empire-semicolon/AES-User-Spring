@@ -32,7 +32,6 @@ import java.util.logging.Logger;
  * @author Bryan Cabansay
  */
 public class UserDao {
-
     
     private DbUtil connection;
     

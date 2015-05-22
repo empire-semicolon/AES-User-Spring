@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 22, 2015 8:39:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.aes.model.Chapter" table="chapter" catalog="aes" optimistic-lock="version">
+        <id name="chapterId" type="int">
+            <column name="chapterId" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="course" class="com.aes.model.Course" fetch="select">
+            <column name="course_courseId" not-null="true" />
+        </many-to-one>
+        <property name="description" type="string">
+            <column name="description" not-null="true" />
+        </property>
+        <property name="chapterNumber" type="int">
+            <column name="chapterNumber" not-null="true" />
+        </property>
+        <property name="chapterTitle" type="string">
+            <column name="chapterTitle" length="50" not-null="true" />
+        </property>
+        <set name="presentations" table="presentation" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="chapter_chapterId" not-null="true" />
+            </key>
+            <one-to-many class="com.aes.model.Presentation" />
+        </set>
+    </class>
+</hibernate-mapping>

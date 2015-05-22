@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="aes"/>
+  <table-filter match-name="presentation"/>
+  <table-filter match-name="courses_assigned"/>
+  <table-filter match-name="user_type"/>
+  <table-filter match-name="chapter"/>
+  <table-filter match-name="course_category"/>
+  <table-filter match-name="business_unit"/>
+  <table-filter match-name="user_details"/>
+  <table-filter match-name="exam"/>
+  <table-filter match-name="exam_scores"/>
+  <table-filter match-name="course"/>
+</hibernate-reverse-engineering>

@@ -16,15 +16,6 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
     </servlet-mapping>
-    <!-- Additional Servlet Mapping -->
-    <servlet>
-        <servlet-name>UserController</servlet-name>
-        <servlet-class>com.aes.controller.UserController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>UserController</servlet-name>
-        <url-pattern>/pages/user</url-pattern>
-    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

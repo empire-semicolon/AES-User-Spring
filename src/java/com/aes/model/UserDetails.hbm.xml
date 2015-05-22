@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 22, 2015 8:39:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.aes.model.UserDetails" table="user_details" catalog="aes" optimistic-lock="version">
+        <id name="userId" type="int">
+            <column name="userId" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="businessUnit" class="com.aes.model.BusinessUnit" fetch="select">
+            <column name="business_unit_businessUnitId" not-null="true" />
+        </many-to-one>
+        <many-to-one name="userType" class="com.aes.model.UserType" fetch="select">
+            <column name="user_type_userTypeId" not-null="true" />
+        </many-to-one>
+        <property name="userName" type="string">
+            <column name="userName" length="45" not-null="true" unique="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="45" not-null="true" />
+        </property>
+        <property name="firstName" type="string">
+            <column name="firstName" length="45" not-null="true" />
+        </property>
+        <property name="middleName" type="string">
+            <column name="middleName" length="45" not-null="true" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="lastName" length="45" not-null="true" />
+        </property>
+        <property name="birthday" type="date">
+            <column name="birthday" length="10" not-null="true" />
+        </property>
+        <property name="position" type="string">
+            <column name="position" length="45" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" not-null="true" />
+        </property>
+        <property name="dateCreated" type="timestamp">
+            <column name="dateCreated" length="19" not-null="true" />
+        </property>
+        <property name="recordStatus" type="boolean">
+            <column name="recordStatus" not-null="true" />
+        </property>
+        <property name="companyId" type="int">
+            <column name="companyId" not-null="true" />
+        </property>
+        <set name="coursesAssigneds" table="courses_assigned" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_details_userId" not-null="true" />
+            </key>
+            <one-to-many class="com.aes.model.CoursesAssigned" />
+        </set>
+        <set name="examScoreses" table="exam_scores" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_details_userId" not-null="true" />
+            </key>
+            <one-to-many class="com.aes.model.ExamScores" />
+        </set>
+        <set name="courses" table="course" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_details_trainer" not-null="true" />
+            </key>
+            <one-to-many class="com.aes.model.Course" />
+        </set>
+    </class>
+</hibernate-mapping>

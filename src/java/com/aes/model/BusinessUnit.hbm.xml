@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 22, 2015 8:39:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.aes.model.BusinessUnit" table="business_unit" catalog="aes" optimistic-lock="version">
+        <id name="businessUnitId" type="int">
+            <column name="businessUnitId" />
+            <generator class="assigned" />
+        </id>
+        <property name="businessUnit" type="string">
+            <column name="businessUnit" length="45" not-null="true" />
+        </property>
+        <set name="userDetailses" table="user_details" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="business_unit_businessUnitId" not-null="true" />
+            </key>
+            <one-to-many class="com.aes.model.UserDetails" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 22, 2015 8:39:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.aes.model.Exam" table="exam" catalog="aes" optimistic-lock="version">
+        <id name="examId" type="int">
+            <column name="examId" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="course" class="com.aes.model.Course" fetch="select">
+            <column name="course_courseId" not-null="true" />
+        </many-to-one>
+        <property name="examTitle" type="string">
+            <column name="examTitle" length="50" not-null="true" />
+        </property>
+        <property name="dateCreated" type="timestamp">
+            <column name="dateCreated" length="19" not-null="true" />
+        </property>
+        <property name="dateEdited" type="timestamp">
+            <column name="dateEdited" length="19" not-null="true" />
+        </property>
+        <property name="questionDetails" type="string">
+            <column name="questionDetails" not-null="true" />
+        </property>
+        <property name="numQuestions" type="int">
+            <column name="numQuestions" not-null="true" />
+        </property>
+        <property name="examStart" type="timestamp">
+            <column name="examStart" length="19" not-null="true" />
+        </property>
+        <property name="examDue" type="timestamp">
+            <column name="examDue" length="19" not-null="true" />
+        </property>
+        <property name="timeLimit" type="float">
+            <column name="timeLimit" precision="12" scale="0" not-null="true" />
+        </property>
+        <set name="examScoreses" table="exam_scores" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="exam_examId" not-null="true" />
+            </key>
+            <one-to-many class="com.aes.model.ExamScores" />
+        </set>
+    </class>
+</hibernate-mapping>

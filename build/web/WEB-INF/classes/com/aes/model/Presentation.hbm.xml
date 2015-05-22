@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 22, 2015 8:39:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.aes.model.Presentation" table="presentation" catalog="aes" optimistic-lock="version">
+        <id name="presentationId" type="int">
+            <column name="presentationId" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="chapter" class="com.aes.model.Chapter" fetch="select">
+            <column name="chapter_chapterId" not-null="true" />
+        </many-to-one>
+        <property name="fileName" type="string">
+            <column name="fileName" length="45" not-null="true" />
+        </property>
+        <property name="fileType" type="string">
+            <column name="fileType" length="45" not-null="true" />
+        </property>
+        <property name="fileSize" type="double">
+            <column name="fileSize" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="filePath" type="string">
+            <column name="filePath" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" not-null="true" />
+        </property>
+        <property name="dateUploaded" type="timestamp">
+            <column name="dateUploaded" length="19" not-null="true" />
+        </property>
+        <property name="recordStatus" type="boolean">
+            <column name="recordStatus" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
